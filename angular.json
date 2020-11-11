@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "my-webshop-app"
+    }
+  },
+  "defaultProject": "my-webshop-app",
+  "cli": {
+    "analytics": "71353051-3266-418f-93ec-462ac1fc0ffe"
+  }
 }

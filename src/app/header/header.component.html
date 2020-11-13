@@ -69,5 +69,6 @@ none block
 </div>
 
 <h1>{{run}}</h1>
-
-<button (click)="fireEvent()">clickMe</button>
+<label>Add an item: <input #newItem></label>
+<button (click)="fireEvent(newItem.value)">Add to parents list</button>
+<button (click)="deleteEvent(newItem.value)">Delete</button>

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'protractor';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
@@ -31,8 +31,9 @@ export class HeaderComponent implements OnInit {
   public myChoice = 'three';
   public subject = ['Angular', 'React', 'vue', 'svelte'];
   // tslint:disable-next-line: no-input-rename
-  @Input('fromParent') public run;
-  @Output() public childInfo = new EventEmitter();
+  @Input('fromParent') public run: string;
+  @Output() public childInfo = new EventEmitter<string>();
+  @Output() deleteRequest = new EventEmitter<string>();
 constructor() { }
 
   ngOnInit(): void {
@@ -48,8 +49,11 @@ constructor() { }
     console.log(message);
   }
 
-  fireEvent(): void{
-    this.childInfo.emit('this is from child');
+  fireEvent(value: string): void{
+    this.childInfo.emit(value);
+  }
+  deleteEvent(value: string): void{
+    this.childInfo.emit(value);
   }
 
 }

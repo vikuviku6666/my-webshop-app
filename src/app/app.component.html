@@ -1,5 +1,7 @@
-<app-header (childInfo)="msg=$event" [fromParent] = "parentMsg"></app-header>
-<h1>{{msg}}</h1>
+<app-header (childInfo)=" addItem($event)" (deleteRequest)="crossOffItem($event)" [fromParent] = "parentMsg"></app-header>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
 
 
 <app-footer></app-footer>

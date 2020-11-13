@@ -1,5 +1,5 @@
-<app-header></app-header>
+<app-header (childInfo)="msg=$event" [fromParent] = "parentMsg"></app-header>
+<h1>{{msg}}</h1>
 
-<h1>hi Vinay</h1>
 
 <app-footer></app-footer>

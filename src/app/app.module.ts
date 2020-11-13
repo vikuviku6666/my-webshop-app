@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { SearchComponent } from './search/search.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

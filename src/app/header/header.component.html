@@ -1,1 +1,73 @@
-<p>header works!</p>
+<p>learning {{name}}</p>
+<p>
+    <!-- interpolation -->
+    {{"Now learning angular: " + name}} <br/>
+    {{name.length}}<br/>
+    {{name.toUpperCase()}}<br/>
+    {{userName()}}<br/>
+    {{myUrl}}<br/>
+    <!-- Property binding -->
+    <input [id]="courseId"  type="text" value="Angular10"><br/>
+    <input [disabled] ="isDisabled" id ='{{courseId}}' type="text" value="Angular10"><br/>
+    <input bind-disabled ="isDisabled" [id]="courseId"   type="text" value="Angular10"><br/>
+    <input [disabled] ="isDisabled" [id]="courseId"   type="text" value="Angular10"><br/>
+</p>
+<!-- class binding -->
+<h5 class='TrueColor'>Vinay</h5>
+<h5 [class]='textColor'>Vinay</h5>
+<!-- ngclass to apply multiply classes -->
+<h5 [ngClass]='Group'>Vinay</h5>
+<h5 [class.TrueSize]='required'>Vinay</h5>
+<!-- style binding -->
+<h2 [style.color]="'blue'">vinay</h2>
+<h2 [style.color]="myColor">vinay</h2>
+<h2 [style.color]="required? 'green' : 'blue'">vinay</h2>
+<h2 [ngStyle]= "myStyles">ambika vinay</h2><!-- to add multiple styles -->
+<!-- Event Binding -->
+<button (click)= "onClick()" type='button'>Click Me </button>
+<h2>{{greetings}}</h2>
+
+<!-- template reference variable -->
+<input #msg type="text">
+<button (click)="message(msg.value)" type="button">welcome</button>
+
+<!-- Two way binding -->
+<input [(ngModel)]= data type="text">
+<button type="button">Click</button>
+
+<h2  >{{data}}</h2>
+<h2  >{{data}}</h2>
+
+<!-- ngIf directive -->
+
+<h2 *ngIf="status; then trueBlock else elseBlock" ></h2>
+
+<ng-template #elseBlock>
+    welcome to else block.
+</ng-template>
+
+<ng-template #trueBlock>
+    welcome to true block.
+</ng-template>
+
+<!-- ngSwitch Directive -->
+<div [ngSwitch]="myChoice">
+<p *ngSwitchCase="'one'">
+first block
+</p>
+<p *ngSwitchCase="'two'">
+second block
+</p>
+<p *ngSwitchDefault>
+none block
+</p>
+</div>
+
+<!-- ngFor Directive -->
+<div *ngFor="let item of subject; index as i">
+    <h2> {{i}} --> {{item}}</h2>
+</div>
+
+<h1>{{run}}</h1>
+
+<button (click)="fireEvent()">clickMe</button>
